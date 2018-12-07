@@ -303,7 +303,7 @@ def tape_temp(xn):
     tape_list.append(2)
     return tape_list
     pass
-
+	
 #整合所有输入数据 形成一个输入数据的纸带 2和1组成
 def tape(xn):
     temp_list = []
@@ -315,7 +315,7 @@ def tape(xn):
             temp_list.append(1)
     return temp_list
 
-
+	
 #对指令计数器的操作i_number
 def op_i_number():
 	pass
@@ -323,101 +323,54 @@ def op_i_number():
 def op_v_number():
 	pass
 #对纸带的右移操作
-#右移动 x=x*2 哥德尔允运算 v++ i++
-def right(x,v_number,i_number):
-    if v_number <=len(x):
-        x=godel_xy(x,[2])
-    v_number+=1
-    i_number+=1
-    return x,v_number,i_number
-
+def right(z,x,v_number)：
+	pass
 #对纸带的左移操作
-#左移动 x=2*x 哥德尔运算 不移动则v--; i++
-def left(x,v_number,i_number):
-    if v_number != 1:
-        x=godel_xy([2],x)
-    else:
-        v_number+=1
-    i_number+=1
-    return x,v_number,i_number
-
+def left():
+	pass
 #对纸带的写1操作(其实是写2)
-#
-def wirte_1(x,v_number,i_number):
-    if x[v_number-1] !=2:
-        x[v_number-1]=2
-    i_number+=1
-    return x,v_number,i_number
-
+def wirte_1():
+	pass
 #对纸带的写b操作（其实是写1）
-def write_b(x,v_number,i_number):
-    if x[v_number-1] != 1:
-        x[v_number-1] =1
-    i_number+=1
-    return x,v_number,i_number
-
+def write_b():
+	pass
 #右边大于4的奇数
 #to ai if b  2*i+3=right_number 不是b则顺序执行
-def odd_4(z,x,v_number,i_number):
-    if x[v_number-1]==1:
-        w=cantor_r(xi(z,i_number))
-        for i in range(1,Lt(z)):
-            if cantor_l(xi(z,i))==w :
-                i_number=i
-        return x,v_number,i_number
-    else:
-        i_number+=1
-        return x,v_number,i_number
-
+def odd_4():
+	pass
 #to ai if 1 2*i+4 = right_number 不是1则顺序执行
 #右边大于4的偶数
-def even_4(z,x,v_number,i_number):
-    if x[v_number-1]==2:
-        w=cantor_r(xi(z,i_number))
-        for i in range(1,Lt(z)):
-            if cantor_l(xi(z,i))==w :
-                i_number=i
-        return x,v_number,i_number
-    else:
-        i_number+=1
-        return x,v_number,i_number
-
+def even_4():
+	pass
 #执行pt-程序  z是t程序的哥德尔数 x是操作纸带
 #康拓对数 左边不为0 则调到对应标号编码为0 执行右边对应的操作  则顺序执行i_number++
-#         左边为0  则按照右边的编码执行 或者完成跳转
+#         左边为0  则按照右边的编码执行 或者完成跳转 
 def conduct(z,x):
     ltz=Lt(z)
     godel_z = godel(z)
     i_number = 1 #指令计数器
     v_number = 1 #带上计数器
     while i_number>=1 and i_number<=ltz:
-        temp_cantor_r_z = cantor_r(xi(z,i_number))
-        if temp_cantor_r_z == 1:
-            x,v_number,i_number=right(x,v_number,i_number)
+		temp_cantor_r_z = cantor_r(xi(z,i_number))
+		if temp_cantor_r_z == 1:
 			#调用右移
-        elif temp_cantor_r_z == 2:
+			pass
+		elif temp_cantor_r_z == 2:
 			#调用左移
-            x,v_number,i_number =left(x,v_number,i_number)
-
-        elif temp_cantor_r_z == 3:
+			pass
+		elif temp_cantor_r_z == 3:
 			#写1
-            x,v_number,i_number = write_b(x,v_number,i_number)
-
-        elif temp_cantor_r_z == 4:
+			pass
+		elif temp_cantor_r_z == 4:
 			#写b
-            x,v_number,i_number = write_1(x,v_number,i_number)
-
-        elif R(temp_cantor_r_z,2)== 1:
+			pass
+		elif R(temp_cantor_r_z,2)== 1:
 			# 奇数 指令为to ai if b
-            x,v_number,i_number = odd_4(z,x,v_number,i_number)
-
-        else:
+			pass
+		else:
 			# 偶数 指令为to ai if 1
-            x,v_number,i_number = even_4(z,x,v_number,i_number)
-
-    result = x.count(2)-1
-    print("结果为:"+result)
-
+			pass
+    pass
 #主函数
 def main():
     # print(prom(60))
@@ -431,11 +384,9 @@ def main():
     else:
         print( "bad godel number!")
 
+    pass
 if __name__=='__main__':
-    #main()
-    z=128 #pt程序的哥德尔数
-    x=[2,2,2,1,2,2,2,2,1,2,2,2,2,2]# 2 ,3, 4 的tape形式
-    conduct(z,x)
+    main()
 #test 各个阶段
 #x+y
     #print("x+y")
